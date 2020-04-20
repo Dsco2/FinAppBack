@@ -7,7 +7,7 @@ using Persistence;
 
 namespace Persistence.Migrations
 {
-    [DbContext(typeof(PrincipalContext))]
+    [DbContext(typeof(MainContext))]
     partial class PrincipalContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

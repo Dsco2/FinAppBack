@@ -4,20 +4,20 @@ using Microsoft.EntityFrameworkCore.Design;
 
 namespace Persistence
 {
-    public class PrincipalContextFactory : IDesignTimeDbContextFactory<PrincipalContext>
+    public class PrincipalContextFactory : IDesignTimeDbContextFactory<MainContext>
     {
-        public PrincipalContext CreateDbContext(string[] args)
+        public MainContext CreateDbContext(string[] args)
         {
-            var builder = new DbContextOptionsBuilder<PrincipalContext>();
+            var builder = new DbContextOptionsBuilder<MainContext>();
 
             builder.UseSqlServer("Server=localhost;Database=FinApp;Trusted_Connection=True;",
             optionsBuilder => optionsBuilder
-                .MigrationsAssembly(typeof(PrincipalContext)
+                .MigrationsAssembly(typeof(MainContext)
                     .GetTypeInfo()
                     .Assembly
                     .GetName().Name)
                 );
-            return new PrincipalContext(builder.Options);
+            return new MainContext(builder.Options);
         }
     }
 }

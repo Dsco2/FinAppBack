@@ -4,11 +4,11 @@ using Persistence.Maps;
 
 namespace Persistence
 {
-    public class PrincipalContext : DbContext
+    public class MainContext : DbContext
     {
         public DbSet<Debt> Debts { get; set; }
 
-        public PrincipalContext(DbContextOptions<PrincipalContext> options) : base(options) { }
+        public MainContext(DbContextOptions<MainContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

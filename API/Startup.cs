@@ -49,6 +49,14 @@ namespace API
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.WithOrigins(
+                    "http://localhost:3000",
+                    "http://hackaton-siigo.s3-website-us-east-1.amazonaws.com"
+                )
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+
             app.UseHttpsRedirection();
             app.UseMvc();
         }

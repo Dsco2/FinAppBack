@@ -11,6 +11,8 @@ namespace IoC
         {
             builder.RegisterType<DebtRepository>().As<IDebtRepository>();
             builder.RegisterType<DebtService>().As<IDebtService>();
+
+            
         }
     }
 }

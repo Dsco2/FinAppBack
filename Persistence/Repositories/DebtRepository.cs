@@ -1,4 +1,5 @@
-﻿using Business.Interfaces;
+﻿using Business.Entities;
+using Business.Interfaces;
 
 namespace Persistence.Repositories
 {
@@ -9,6 +10,12 @@ namespace Persistence.Repositories
         public DebtRepository(MainContext context)
         {
             _context = context;
+        }
+
+        public bool CreateDebt(Debt debt)
+        {
+            _context.Debts.Add(debt);
+            return _context.SaveChanges() > 0;
         }
     }
 }

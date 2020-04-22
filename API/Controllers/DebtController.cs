@@ -1,4 +1,5 @@
-﻿using Business.Interfaces;
+﻿using Business.Entities;
+using Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -13,10 +14,12 @@ namespace API.Controllers
             _debtService = debtService;
         }
 
-        [HttpGet]
-        public IActionResult Test()
+        [HttpPost]
+        public IActionResult CreateDebt([FromBody]Debt debt)
         {
-            return Ok("I'm here!");
+            return _debtService.CreateDebt(debt) == true
+                ? StatusCode(500)
+                : Ok();
         }
     }
 }

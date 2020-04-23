@@ -1,4 +1,5 @@
-﻿using Business.Entities;
+﻿using System.Collections.Generic;
+using Business.Entities;
 using Business.Interfaces;
 
 namespace Business.Services
@@ -15,6 +16,11 @@ namespace Business.Services
         public bool CreateDebt(Debt debt)
         {
             return _debtRepository.CreateDebt(debt);
+        }
+
+        public List<Debt> GetDebt()
+        {
+            return _debtRepository.GetDebt();
         }
     }
 }

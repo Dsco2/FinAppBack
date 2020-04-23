@@ -1,6 +1,7 @@
 ﻿using Business.Entities;
 using Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace API.Controllers
 {
@@ -17,9 +18,18 @@ namespace API.Controllers
         [HttpPost]
         public IActionResult CreateDebt([FromBody]Debt debt)
         {
-            return _debtService.CreateDebt(debt) == true
-                ? StatusCode(500)
-                : Ok();
+            return _debtService.CreateDebt(debt)
+                ? Ok()
+                : StatusCode(500);
+        }
+
+        [HttpGet]
+        public IActionResult GetDebt()
+        {
+            var debtList = _debtService.GetDebt();
+            return debtList.Any()
+                ? (IActionResult) Ok(debtList)
+                : StatusCode(500);
         }
     }
 }

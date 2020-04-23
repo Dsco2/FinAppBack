@@ -1,4 +1,6 @@
-﻿using Business.Entities;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Business.Entities;
 using Business.Interfaces;
 
 namespace Persistence.Repositories
@@ -16,6 +18,11 @@ namespace Persistence.Repositories
         {
             _context.Debts.Add(debt);
             return _context.SaveChanges() > 0;
+        }
+
+        public List<Debt> GetDebt()
+        {
+            return _context.Debts.ToList();
         }
     }
 }

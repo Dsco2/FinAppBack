@@ -7,5 +7,6 @@ namespace Business.Interfaces
     {
         bool CreateDebt(Debt debt);
         List<Debt> GetDebt();
+        List<DebtDetail> GetDetailDebt(int id);
     }
 }

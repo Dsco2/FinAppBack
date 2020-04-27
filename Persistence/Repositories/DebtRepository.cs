@@ -24,5 +24,11 @@ namespace Persistence.Repositories
         {
             return _context.Debts.ToList();
         }
+
+        public Debt GetDebtById(int id)
+        {
+            return _context.Debts
+                .FirstOrDefault(x => x.IdDebt == id);
+        }
     }
 }

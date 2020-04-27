@@ -31,5 +31,14 @@ namespace API.Controllers
                 ? (IActionResult) Ok(debtList)
                 : StatusCode(500);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetDetailsDebt(int id)
+        {
+            var debtList = _debtService.GetDetailDebt(id);
+            return debtList.Any()
+                ? (IActionResult)Ok(debtList)
+                : StatusCode(500);
+        }
     }
 }

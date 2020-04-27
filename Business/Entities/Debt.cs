@@ -1,4 +1,6 @@
-﻿namespace Business.Entities
+﻿using System;
+
+namespace Business.Entities
 {
     public class Debt
     {
@@ -8,5 +10,6 @@
         public int FeeQty { get; set; }        
         public string Debtor { get; set; }        
         public decimal DebtValue { get; set; }        
+        public DateTime InitDate { get; set; }        
     }
 }

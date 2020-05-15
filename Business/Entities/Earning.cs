@@ -2,11 +2,11 @@
 
 namespace Business.Entities
 {
-    public class Spending
+    public class Earning
     {
-        public int IdSpending { get; set; }
+        public int IdEarning { get; set; }
         public string Name { get; set; }
         public decimal Value { get; set; }
-        public DateTime DateSpending { get; set; }
+        public DateTime DateEarning { get; set; }
     }
 }
